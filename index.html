@@ -61,7 +61,20 @@
     <!-- Hero section -->
     <section class="hero section">
       <h1 class="hero-title">Ефективні рішення для вашого бізнесу</h1>
-      <button class="btn" type="button">Замовити послугу</button>
+      <button class="btn" type="button" data-modal-open>Замовити послугу</button>
+
+      <!-- Backdrop -->
+      <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nostrum quos quam vel laboriosam nihil hic. Qui atque accusantium incidunt architecto ipsam necessitatibus voluptatem ipsum obcaecati cum labore, illum facilis beatae, eveniet ducimus repellendus neque iure omnis accusamus optio minima. Sed at ea consectetur vitae! Illum vero velit facilis necessitatibus id.</p>
+          <button class="close-btn" type="button" data-modal-close>
+            <svg width="18px" height="18px">
+              <use href="./images/sprite.svg#modal-close-black"></use>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- End Backdrop -->
     </section>
     <!-- End Hero section -->
 
@@ -120,15 +133,30 @@
         <h2 class="sect-title">Чим ми займаємося</h2>
         <ul class="works-list">
           <li class="item">
-            <img class="image" src="./images/website-layout.jpg" alt="Верстка макету веб-сайта по узгодженному проєкту" width="370" height="294">
+            <div class="work-thumb">
+              <img src="./images/website-layout.jpg" alt="Верстка макету веб-сайта по узгодженному проєкту" width="370" height="294">
+              <div class="work-overlay">
+                <h3 class="work-title">Десктопні додатки</h3>
+              </div>
+            </div>
           </li>
 
           <li class="item">
-            <img class="image" src="./images/design-development.jpg" alt="Розробка дизайн проєкту майбутнього веб-сайту" width="370" height="294">
+            <div class="work-thumb">
+              <img src="./images/application-development.jpg" alt="Розробка дизайн проєкту майбутнього веб-сайту" width="370" height="294">
+              <div class="work-overlay">
+                <h3 class="work-title">Мобільні додатки</h3>
+              </div>
+            </div>
           </li>
 
           <li class="item">
-            <img class="image" src="./images/application-development.jpg" alt="Створення мобільних додатків" width="370" height="294">
+            <div class="work-thumb">
+              <img src="./images/design-development.jpg" alt="Створення мобільних додатків" width="370" height="294">
+              <div class="work-overlay">
+                <h3 class="work-title">Дизайнерські рішення</h3>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -422,12 +450,8 @@
     </div>
   </footer>
   <!-- End Site footer -->
-  <!-- Скріпт для автоматичної зміни висоти хедера сайту -->
-  <script>
-    console.log(document.querySelector(".page-header").getBoundingClientRect());
-    const { height: pageHeaderHeight } = document.querySelector(".page-header").getBoundingClientRect();
-
-    document.body.style.paddingTop = '${pageHeaderHeight}px';
+  <!-- Скріпт для кнопок відкриття/закриття модального вікна -->
+  <script src="./js/modal.js">
   </script>
 </body>
 
